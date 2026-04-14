@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anuja Shinde — Software Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1814;
+    --ink-2: #3d3a34;
+    --ink-3: #7a766e;
+    --rule: #d4cfc6;
+    --accent: #c0392b;
+    --accent-light: #f9ecea;
+    --bg: #faf9f7;
+    --col-left: 200px;
+  }
+
+  html { font-size: 10pt; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.5;
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    padding: 48px 52px 28px;
+    border-bottom: 2px solid var(--ink);
+    gap: 20px;
+  }
+
+  .name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 42pt;
+    line-height: 1;
+    letter-spacing: -1px;
+    color: var(--ink);
+  }
+
+  .name em {
+    display: block;
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    color: var(--accent);
+    font-size: 20pt;
+    margin-top: 4px;
+    letter-spacing: 0;
+  }
+
+  .contact {
+    text-align: right;
+    font-family: 'DM Mono', monospace;
+    font-size: 7.5pt;
+    color: var(--ink-2);
+    line-height: 2;
+  }
+
+  .contact a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--rule); }
+
+  .body {
+    display: grid;
+    grid-template-columns: var(--col-left) 1fr;
+    padding: 0 52px 48px;
+  }
+
+  .left {
+    padding-top: 32px;
+    padding-right: 28px;
+    border-right: 1px solid var(--rule);
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+    margin-top: 28px;
+  }
+
+  .section-label:first-child { margin-top: 0; }
+
+  .skill-group { margin-bottom: 14px; }
+
+  .skill-group-name {
+    font-size: 7pt;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+    letter-spacing: 0.04em;
+  }
+
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 3px; }
+
+  .tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 6.5pt;
+    background: white;
+    border: 1px solid var(--rule);
+    color: var(--ink-2);
+    padding: 2px 6px;
+    border-radius: 2px;
+  }
+
+  .tag.hot {
+    background: var(--accent-light);
+    border-color: #e8b0aa;
+    color: var(--accent);
+  }
+
+  .edu-school { font-size: 8pt; font-weight: 600; color: var(--ink); line-height: 1.4; }
+  .edu-degree { font-size: 7.5pt; color: var(--ink-2); line-height: 1.4; }
+  .edu-meta { font-family: 'DM Mono', monospace; font-size: 6.5pt; color: var(--ink-3); margin-top: 2px; }
+
+  .edu-item { margin-bottom: 12px; }
+
+  .right { padding-top: 32px; padding-left: 32px; }
+
+  .profile-text {
+    font-size: 9pt;
+    color: var(--ink-2);
+    line-height: 1.75;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 28px;
+  }
+
+  .profile-text strong { color: var(--ink); font-weight: 600; }
+
+  .exp-section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+
+  .exp-item { margin-bottom: 28px; }
+  .exp-item:last-child { margin-bottom: 0; }
+
+  .exp-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: baseline;
+    margin-bottom: 2px;
+  }
+
+  .exp-role {
+    font-family: 'DM Serif Display', serif;
+    font-size: 13pt;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+
+  .exp-period {
+    font-family: 'DM Mono', monospace;
+    font-size: 6.5pt;
+    color: var(--ink-3);
+    white-space: nowrap;
+  }
+
+  .exp-company {
+    font-size: 8pt;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.03em;
+    margin-bottom: 10px;
+  }
+
+  .exp-company span { color: var(--ink-3); font-weight: 400; margin-left: 6px; }
+
+  .bullets { list-style: none; }
+
+  .bullets li {
+    font-size: 8pt;
+    color: var(--ink-2);
+    line-height: 1.6;
+    padding-left: 14px;
+    position: relative;
+    margin-bottom: 4px;
+  }
+
+  .bullets li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--rule);
+    font-size: 7pt;
+    top: 1px;
+  }
+
+  .bullets li strong { color: var(--ink); font-weight: 600; }
+
+  .exp-stack { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 9px; }
+
+  .stack-chip {
+    font-family: 'DM Mono', monospace;
+    font-size: 6pt;
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    color: var(--ink-3);
+    padding: 2px 7px;
+    border-radius: 99px;
+  }
+
+  .exp-divider { border: none; border-top: 1px dashed var(--rule); margin: 24px 0; }
+
+  /* Project sub-items within an experience block */
+  .project-block {
+    margin-top: 12px;
+    padding: 10px 12px;
+    background: white;
+    border-left: 2px solid var(--accent);
+    border-radius: 0 4px 4px 0;
+  }
+
+  .project-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 7pt;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: 0.04em;
+    margin-bottom: 4px;
+  }
+
+  .project-title span {
+    color: var(--ink-3);
+    font-weight: 400;
+    margin-left: 6px;
+    font-size: 6.5pt;
+  }
+
+  .project-desc {
+    font-size: 7.5pt;
+    color: var(--ink-2);
+    line-height: 1.55;
+  }
+
+  @media print {
+    body { background: white; max-width: none; }
+    .header { padding: 16px 36px 12px; }
+    .name { font-size: 32pt; }
+    .name em { font-size: 15pt; margin-top: 2px; }
+    .contact { font-size: 7pt; line-height: 1.7; }
+    .body { padding: 0 36px 16px; }
+    .left { padding-top: 14px; padding-right: 20px; }
+    .right { padding-top: 14px; padding-left: 24px; }
+    .section-label { margin-top: 14px; margin-bottom: 5px; font-size: 6pt; }
+    .skill-group { margin-bottom: 8px; }
+    .skill-group-name { font-size: 6.5pt; }
+    .tag { font-size: 6pt; padding: 1px 5px; }
+    .profile-text { font-size: 7.5pt; line-height: 1.5; padding-bottom: 10px; margin-bottom: 12px; }
+    .exp-section-label { margin-bottom: 10px; font-size: 6pt; }
+    .exp-item { margin-bottom: 12px; }
+    .exp-role { font-size: 11pt; }
+    .exp-company { font-size: 7.5pt; margin-bottom: 6px; }
+    .exp-period { font-size: 6pt; }
+    .bullets li { margin-bottom: 1px; font-size: 7pt; line-height: 1.45; }
+    .exp-stack { margin-top: 4px; gap: 2px; }
+    .stack-chip { font-size: 5.5pt; padding: 1px 5px; }
+    .exp-divider { margin: 10px 0; }
+    .edu-school { font-size: 7.5pt; }
+    .edu-degree { font-size: 7pt; }
+    .edu-meta { font-size: 6pt; }
+    .project-block { margin-top: 7px; padding: 7px 10px; }
+    .project-title { font-size: 6.5pt; margin-bottom: 3px; }
+    .project-desc { font-size: 6.5pt; line-height: 1.45; }
+    a { color: inherit !important; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  @page { size: A4; margin: 6mm 0 0 0; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <div class="name">Anuja Shinde<em>Software Engineer</em></div>
+  </div>
+  <div class="contact">
+    <div>+91 93223 71082</div>
+    <div><a href="mailto:anujashinde0803@gmail.com">anujashinde0803@gmail.com</a></div>
+    <div><a href="https://github.com/anujashinde" target="_blank">github.com/anujashinde</a></div>
+    <div><a href="https://linkedin.com/in/anujashinde" target="_blank">linkedin.com/in/anujashinde</a></div>
+  <div><a https://leetcode.com/u/9RColoz8Xm/ target="_blank">leetcode/anujashinde</a></div>
+    <div>Aurangabad, Maharashtra, India</div>
+  </div>
+</div>
+
+<div class="body">
+
+  <div class="left">
+
+    <div class="section-label">Skills</div>
+
+    <div class="skill-group">
+      <div class="skill-group-name">Languages</div>
+      <div class="skill-tags">
+        <span class="tag hot">JavaScript</span>
+        <span class="tag">Java</span>
+        <span class="tag">Python</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-group-name">Frontend</div>
+      <div class="skill-tags">
+        <span class="tag hot">React</span>
+        <span class="tag">VueJs</span>
+       <span class="tag">Typescript</span>
+        <span class="tag">Tailwind</span>
+        <span class="tag">MUI</span>
+        <span class="tag">HTML5 / CSS3</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-group-name">Backend</div>
+      <div class="skill-tags">
+        <span class="tag hot">Node.js</span>
+        <span class="tag hot">Express</span>
+        <span class="tag">FastAPI</span>
+        <span class="tag">REST APIs</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-group-name">Databases</div>
+      <div class="skill-tags">
+        <span class="tag">MySQL</span>
+        <span class="tag">MongoDB</span>
+        <!-- <span class="tag">PostgreSQL</span> -->
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-group-name">DevOps</div>
+      <div class="skill-tags">
+        <span class="tag hot">Docker</span>
+        <span class="tag hot">Jenkins</span>
+        <span class="tag">CI/CD</span>
+        <span class="tag">Prometheus</span>
+        <span class="tag">Grafana</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-group-name">Tools &amp; Core</div>
+      <div class="skill-tags">
+        <span class="tag hot">Git / GitHub</span>
+        <span class="tag">Redux</span>
+        <span class="tag">Context API</span>
+        <span class="tag">OOP</span>
+        <span class="tag">Scrum / Agile</span>
+      </div>
+    </div>
+
+    <div class="section-label">Education</div>
+
+    <div class="edu-item">
+      <div class="edu-school">Deogiri Institute of Engineering</div>
+      <div class="edu-degree">B.Tech — CS (AI &amp; ML)</div>
+      <div class="edu-meta">2021 – 2025</div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-school">Deogiri College</div>
+      <div class="edu-degree">Higher Secondary — PCM</div>
+      <div class="edu-meta">2017 – 2019</div>
+    </div>
+
+  </div>
+
+  <div class="right">
+
+    <div class="profile-text">
+      Full-stack engineer with hands-on <strong>1 year experience</strong> building <strong>React, Node.js, and production-grade SAAS web apps</strong> from UI architecture to backend APIs and live deployments. Practical experience with <strong>Docker, Jenkins, and CI/CD pipelines</strong>, including building internal DevOps tooling adopted by the full engineering team. Delivered features end-to-end on platforms with <strong>5,000+ daily users</strong>, and driven <strong>measurable improvements</strong> in performance and user engagement across F&amp;B, social, and enterprise products.
+    </div>
+
+    <div class="exp-section-label">Experience</div>
+
+    <!-- Transerg -->
+    <div class="exp-item">
+      <div class="exp-header">
+        <div class="exp-role">Software Engineer I</div>
+        <div class="exp-period">May 2025 – Present</div>
+      </div>
+      <div class="exp-company">Transerg LLP (PetPooja) <span>· Client: <a href="https://tasksdashboard.petpooja.com/login" target="_blank" style="color: var(--ink-3); text-decoration: none; border-bottom: 1px solid var(--rule);">Petpooja Tasks Dashboard</a> · Aurangabad, Maharashtra</span></div>
+      <ul class="bullets">
+        <li>Engineered and maintained a production-grade task management application using <strong>MongoDB, Express.js, React, and Node.js</strong>, actively serving <strong>5,000+ daily active users</strong> in a high-stakes F&amp;B environment.</li>
+        <li>Delivered <strong>5+ features end-to-end</strong> — from design to deployment — within sprint deadlines on a live-user platform.</li>
+        <li>Built a <strong>Kanban board end-to-end</strong>, reducing task-tracking overhead across multiple teams in real-time F&amp;B operations.</li>
+        <li>Built a <strong>self-onboarding flow</strong> that eliminated manual setup steps, enabling independent user activation for new restaurant staff.</li>
+        <li>Maintained CI/CD pipelines and contributed to code reviews within an agile SDLC, ensuring <strong>zero-downtime delivery</strong> for concurrent users.</li>
+      </ul>
+
+      <!-- Internal Projects -->
+      <div class="project-block">
+        <div class="project-title">DeployLens <span>· Spring Boot · React · Prometheus · Grafana · Docker</span></div>
+        <div class="project-desc">Real-time Jenkins pipeline monitoring dashboard built to give the team visibility into CI/CD health — polls Jenkins every 30s, surfaces failures instantly, and pushes metrics to Grafana. <strong>Adopted by the full engineering team</strong>, cutting the time to identify and locate pipeline failures.</div>
+      </div>
+
+      <div class="project-block" style="margin-top: 8px;">
+        <div class="project-title">LogLense <span>· FastAPI · Python · Claude AI · Jenkins</span></div>
+        <div class="project-desc">AI-powered build log analyser that pulls Jenkins logs, pre-filters noise (60–80% token reduction), and uses Claude API to return root cause, fix steps, and flaky test detection. Reduced average debug time from ~20 minutes to <strong>under 5 minutes</strong> per build failure — used daily by the team.</div>
+      </div>
+
+      <div class="exp-stack">
+        <span class="stack-chip">React</span>
+        <span class="stack-chip">Node.js</span>
+        <span class="stack-chip">Express</span>
+        <span class="stack-chip">MongoDB</span>
+        <span class="stack-chip">Docker</span>
+        <span class="stack-chip">Jenkins</span>
+        <span class="stack-chip">Prometheus</span>
+        <span class="stack-chip">Grafana</span>
+        <span class="stack-chip">FastAPI</span>
+        <span class="stack-chip">CI/CD</span>
+      </div>
+    </div>
+
+    <hr class="exp-divider">
+
+    <!-- SDLC Corp -->
+    <div class="exp-item">
+      <div class="exp-header">
+        <div class="exp-role">Web Developer Intern</div>
+        <div class="exp-period">Jan 2025 – May 2025</div>
+      </div>
+      <div class="exp-company">SDLC Corp <span>· Aurangabad, Maharashtra</span></div>
+      <ul class="bullets">
+        <li>Worked on a social media-inspired platform for brand–audience engagement via campaigns, polls, and notifications.</li>
+        <li>Implemented <strong>backend validation for notifications</strong>, ensuring users only received updates for followed brands — reducing irrelevant notifications by <strong>30%</strong> and improving engagement.</li>
+        <li>Enhanced UI/UX by adding loaders, error handling, and <strong>multi-language support</strong> via i18next; designed APIs for graphical analytics, increasing user satisfaction by <strong>25%.</strong></li>
+      </ul>
+      <div class="exp-stack">
+        <span class="stack-chip">React</span>
+        <span class="stack-chip">Node.js</span>
+        <span class="stack-chip">Express</span>
+        <span class="stack-chip">MySQL</span>
+        <span class="stack-chip">Tailwind</span>
+        <span class="stack-chip">i18next</span>
+        <span class="stack-chip">Git/GitHub</span>
+      </div>
+    </div>
+
+    <hr class="exp-divider">
+
+    <!-- CredoIt -->
+    <div class="exp-item">
+      <div class="exp-header">
+        <div class="exp-role">Software Developer Intern</div>
+        <div class="exp-period">Sep 2023 – Sep 2024</div>
+      </div>
+      <div class="exp-company">CredoIt PVT LTD <span>· Aurangabad, Maharashtra</span></div>
+      <ul class="bullets">
+        <li>Designed and implemented a <strong>structured UI from scratch</strong> for executives to manage customer details, service info, and booking data — improving operational efficiency by <strong>25%.</strong></li>
+        <li>Integrated REST APIs to render real-time data and enable CRUD operations, ensuring smooth data flow and dynamic updates.</li>
+        <li>Took initiative to transition state management from <strong>Redux to Context API</strong> — independently researched, proposed, and executed the change, reducing unnecessary re-renders.</li>
+        <li>Contributed to code reviews and maintained well-documented, reusable TypeScript components within a <strong>Scrum workflow.</strong></li>
+      </ul>
+      <div class="exp-stack">
+        <span class="stack-chip">React</span>
+        <span class="stack-chip">Redux</span>
+        <span class="stack-chip">Context API</span>
+        <span class="stack-chip">TypeScript</span>
+        <span class="stack-chip">MUI</span>
+        <span class="stack-chip">REST APIs</span>
+        <span class="stack-chip">Git/GitHub</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
